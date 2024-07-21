@@ -24,6 +24,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            
         }
         .content {
             width: 80%;
@@ -35,6 +36,7 @@
             text-align: center;
             z-index: 1;
             position: relative;
+            transition: all 0.148819171939s cubic-bezier(0, 0.18, 0.93, 0.21);
         }
         .bottom-elements {
             display: flex;
@@ -42,7 +44,7 @@
             margin-top: 20px;
         }
         .element {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.361264);
             border-radius: 10px;
             padding: 10px;
             text-align: center;
@@ -63,15 +65,71 @@
             height: 100%;
             z-index: 0;
         }
+        .button {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            right: 530px;
+        }
     </style>
+    <script>
+/*
+   * Author: Danila Miheenko
+   * You can use this script on your site.
+*/
+document.addEventListener("DOMContentLoaded", () => {
+  const parent = document.querySelector(".content");
+  const newElement = document.createElement("img");
+  newElement.classList.add("button");
+
+  const secondChild = parent.children[1]; // получаем второй дочерний элемент
+  parent.insertBefore(newElement, secondChild); 
+  const button = document.querySelector(".button");
+  if (localStorage.getItem("theme") === "light-theme") {
+    toggleTheme("light-theme", button);
+  } else {
+    toggleTheme("dark-theme", button);
+  }
+
+  button.addEventListener("click", () => {
+    if (document.body.classList.contains("light-theme")) {
+      toggleTheme("dark-theme", button);
+    } else {
+      toggleTheme("light-theme", button);
+    }
+  });
+  document.querySelector(".content").style.transition = "all 0.148819171939s cubic-bezier(0, 0.18, 0.93, 0.21)";
+  function toggleTheme(theme) {
+  document.body.classList.remove("light-theme");
+  document.body.classList.remove("dark-theme");
+
+  document.body.classList.add(theme);
+
+  button.classList.remove("light-btn");
+  button.classList.remove("dark-btn");
+  button.classList.add(theme === "light-theme"? "dark-btn" : "light-btn");
+  const svgs = document.querySelectorAll("svg");
+  const content = document.querySelector('.content');
+  content.style.backgroundColor = theme === "light-theme" ? "rgba(255, 255, 255, 0.8)" : "rgba(15, 15, 15, 0.8)";
+  content.style.color = theme === "light-theme" ? "black" : "white";
+  const el = document.querySelectorAll(".element");
+  el.forEach(di => {
+    di.style.backgroundColor = theme === "light-theme" ? "rgba(0, 0, 0, 0.36)" : "rgba(255, 255, 255, 0.361264)"
+  })
+  button.setAttribute("src", theme === "light-theme"? "dark.png" : "light.png");
+
+  localStorage.setItem("theme", theme);
+}
+});
+    </script>
 </head>
 <body> 
-    <div class="container">
+    <div class="container main">
         <div id="particles-js"></div>
         <div class="content">
             <img src="unnamed.jpg" class="Avatar" width="100px" height="100px" style="border-radius: 30px;" alt="Avatar">
             <h1>1Krokko3213 <br> <small style="color: rgba(55, 55, 55, 0.77)">@onekrokko</small></h1>
-            <p>The Java, Kotlin, C++ coder</p>
+            <p>Kotlin, Java, JS, C++ кодер</p>
             <div class="bottom-elements">
                 <div class="element">
                     <a href="https://discord.gg/XGPGabAq7h" target="_blank">
