@@ -66,6 +66,7 @@
             z-index: 0;
         }
         .button {
+            transition: all 0.78819171939s cubic-bezier(0, 0.18, 0.93, 0.21);
             width: 80px;
             height: 80px;
             position: absolute;
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const newElement = document.createElement("img");
   newElement.classList.add("button");
 
-  const secondChild = parent.children[1]; // получаем второй дочерний элемент
+  const secondChild = parent.children[1];
   parent.insertBefore(newElement, secondChild); 
   const button = document.querySelector(".button");
   if (localStorage.getItem("theme") === "light-theme") {
@@ -108,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   button.classList.remove("light-btn");
   button.classList.remove("dark-btn");
   button.classList.add(theme === "light-theme"? "dark-btn" : "light-btn");
-  const svgs = document.querySelectorAll("svg");
   const content = document.querySelector('.content');
   content.style.backgroundColor = theme === "light-theme" ? "rgba(255, 255, 255, 0.8)" : "rgba(15, 15, 15, 0.8)";
   content.style.color = theme === "light-theme" ? "black" : "white";
