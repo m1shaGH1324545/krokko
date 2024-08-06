@@ -8,6 +8,11 @@
         <link href="assets/styles/main.css" rel="stylesheet" >
         <script src="assets/js/ThemeChanger.js"></script>
         <script src="assets/js/PreLoad.js"></script>
+        <style>
+            .content {
+                transition: all 0.148819171939s cubic-bezier(0, 0.18, 0.93, 0.21);
+            }
+        </style>
         <script>
             function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -15,6 +20,7 @@
 
 async function dynamicTitle() {
     let index = 0;
+    const url = "https://mrksbgg.is-a.dev/";
     let titles = ["1Krokko3213", "1Krokko3213 dev"];;
 
     while (true) {
