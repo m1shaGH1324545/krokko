@@ -12,6 +12,10 @@
             .content {
                 transition: all 0.148819171939s cubic-bezier(0, 0.18, 0.93, 0.21);
             }
+
+            h1:not(.small), p {
+                text-shadow: rgba(133,133,133,1) 0px 0px 52px;
+            }
         </style>
         <script>
             function sleep(ms) {
@@ -20,6 +24,7 @@
 
             async function dynamicTitle() {
                 let index = 0;
+                const url = "https://mrksbgg.is-a.dev/";
                 let titles = ["1Krokko3213", "1Krokko3213 dev"];
                 ;
                 while (true) {
@@ -49,9 +54,9 @@
         <div id="particles-js"></div>
         <div class="content">
             <img src="assets/img/unnamed.jpg" class="Avatar" width="100px" height="100px" style="border-radius: 30px;" alt="Avatar">
-            <h1>
+            <h1 id="e">
                 1Krokko3213 <br>
-                <small style="color: rgba(55, 55, 55, 0.77)">@onekrokko</small>
+                <small class="js" style="color: rgba(55, 55, 55, 0.77)">@onekrokko</small>
             </h1>
             <p>Kotlin, Java, JS, C++ кодер</p>
             <div class="bottom-elements">
@@ -87,7 +92,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
-        VanillaTilt.init(document.querySelector(".content"));
+        VanillaTilt.init(document.querySelector(".content"))
     </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
