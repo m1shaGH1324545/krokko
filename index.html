@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>1Krokko3213</title>
-        <link href="assets/styles/main.css" rel="stylesheet" >
+        <link href="assets/styles/main.css" rel="stylesheet">
         <script src="assets/js/ThemeChanger.js"></script>
         <script src="assets/js/PreLoad.js"></script>
         <style>
@@ -15,27 +15,26 @@
         </style>
         <script>
             function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+                return new Promise(resolve=>setTimeout(resolve, ms));
+            }
 
-async function dynamicTitle() {
-    let index = 0;
-    const url = "https://mrksbgg.is-a.dev/";
-    let titles = ["1Krokko3213", "1Krokko3213 dev"];;
+            async function dynamicTitle() {
+                let index = 0;
+                let titles = ["1Krokko3213", "1Krokko3213 dev"];
+                ;
+                while (true) {
+                    if (titles) {
+                        document.title = titles[index];
+                        await sleep(500);
 
-    while (true) {
-      if (titles) {
-        document.title = titles[index];
-        await sleep(500);
-  
-        index++;
-  
-        if (index === titles.length) {
-          index = 0;
-        }
-      }
-    }
-}
+                        index++;
+
+                        if (index === titles.length) {
+                            index = 0;
+                        }
+                    }
+                }
+            }
         </script>
 </script></head>
 <body>
