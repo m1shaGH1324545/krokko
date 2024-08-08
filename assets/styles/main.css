@@ -7,7 +7,6 @@ body, html {
     justify-content: center;
     align-items: center;
     font-family: 'Trebuchet MS', sans-serif;
-    background-image: url("http://m1shagh1324545.github.io/krokko/assets/img/2024-07-22_18.45.20.png");
 }
 
 .container {
@@ -19,11 +18,21 @@ body, html {
     align-items: center;
     overflow: hidden;
 }
-
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("C:/Users/Misha/Desktop/krokko-main/assets/img/2024-07-22_18.45.20.png");
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px)
+}
 .content {
     width: 80%;
     max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     padding: 20px;
     color: white;
